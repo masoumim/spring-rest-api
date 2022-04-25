@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+	<title>Add Product</title>
+</head>
+
+<body>
+	<a href="/" th:href="@{/}">
+		<h2>Inventory App</h2>
+	</a>
+	<h2>Add Product </h2>
+
+	<form method="post" action="/product/addProduct">
+		<table border=0>
+			<tr>
+				<td align="right">Category:</td>
+				<td align="left">
+					<select th:if="${ not #lists.isEmpty(options) }" class="form-control" id="dropDownList"
+						name="category">
+						<option value="0">select option</option>
+						<option th:each="option : ${options}" th:value="${option.id}" th:text="${option.name}"></option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">Name:</td>
+				<td align="left"><input type="text" name="productName" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Supplier Id:</td>
+				<td align="left"><input type="number" name="supplierId" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Quantity Per Unit:</td>
+				<td align="left"><input type="text" name="quantityPerUnit" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Unit Price:</td>
+				<td align="left"><input type="text" name="unitPrice" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Units in stock:</td>
+				<td align="left"><input type="number" name="unitsInStock" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Units on order:</td>
+				<td align="left"><input type="number" name="unitsOnOrder" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Reorder level:</td>
+				<td align="left"><input type="number" name="reorderLevel" size="50"></input></td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td align="left"><input type="submit"></input></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+
+</html>

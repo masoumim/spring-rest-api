@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+	<title>Edit Category</title>
+</head>
+
+<body>
+	<a href="/" th:href="@{/}">
+		<h2>Inventory App</h2>
+	</a>
+
+	<h2>Edit Category </h2>
+
+	<form method="post" action="/category/updateCategory">
+		<table border=0>
+
+			<tr>
+				<td align="right">Id:</td>
+				<td lign="left"><input type="number" name="Id" size="50" th:value="${category.id}"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Name:</td>
+				<td lign="left"><input type="text" name="name" size="50" th:value="${category.name}"></input></td>
+			</tr>
+			<tr>
+				<td align="right">Description:</td>
+				<td align="left"><input type="text" name="description" size="50"
+						th:value="${category.description}"></input></td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td align="left"><input type="submit" value="Update"></input></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+
+</html>

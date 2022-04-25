@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+	<title>List Category</title>
+</head>
+
+<body>
+	<a href="/" th:href="@{/}">
+		<h2>Inventory App</h2>
+	</a>
+
+	<h2>Category List</h2>
+
+	<a th:href="@{'/category/addCategoryPage'}">Add Category</a>
+
+	<br />
+
+	<table th:if="${ not #lists.isEmpty(categories) }" border=1>
+		<tr>
+			<td>id</td>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Delete</td>
+			<td>Edit</td>
+		</tr>
+		<tr th:each="category : ${categories}">
+			<td th:text="${category.id}"></td>
+			<td th:text="${category.name}"></td>
+			<td th:text="${category.description}"></td>
+			<td><a th:href="@{/category/delete/{id}(id=${category.id})}">Delete</a></td>
+			<td><a th:href="@{/category/updateCategoryPage/{id}(id=${category.id})}">Edit</a></td>
+		</tr>
+	</table>
+</body>
+</html>

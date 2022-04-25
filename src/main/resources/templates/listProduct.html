@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+	<title>List Product</title>
+</head>
+
+<body>
+	<a href="/" th:href="@{/}">
+		<h2>Inventory App</h2>
+	</a>
+	<h2>Product List</h2>
+
+	<a th:href="@{'/product/addProductPage'}">Add Product</a>
+
+	<br />
+
+	<table th:if="${ not #lists.isEmpty(products) }" border=1>
+		<tr>
+			<td>category</td>
+			<td>id</td>
+			<td>Product Name</td>
+			<td>Supplier id</td>
+			<td>Qty per unit</td>
+			<td>Unit price</td>
+			<td>Units in stock</td>
+			<td>Units on order</td>
+			<td>Reorder level</td>
+			<td>Delete</td>
+			<td>Edit</td>
+		</tr>
+		<tr th:each="product : ${products}">
+			<td th:text="${product.category}"></td>
+			<td th:text="${product.id}"></td>
+			<td th:text="${product.productName}"></td>
+			<td th:text="${product.supplierId}"></td>
+			<td th:text="${product.quantityPerUnit}"></td>
+			<td th:text="${product.unitPrice}"></td>
+			<td th:text="${product.unitsInStock}"></td>
+			<td th:text="${product.unitsOnOrder}"></td>
+			<td th:text="${product.reorderLevel}"></td>
+			<td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a></td>
+			<td><a th:href="@{/product/updateProductPage/{id}(id=${product.id})}">Edit</a></td>
+		</tr>
+	</table>
+
+</body>
+
+</html>
