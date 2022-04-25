@@ -21,10 +21,17 @@ The project runs on local host port 8080. Deployment to Heroku is possible.
 
 Endpoints:
 /category/listCategory
+
 /category/addCategoryPage
+
 /category/updateCategoryPage
+
 /category/delete/{id}
+
 /product/listProduct
+
 /product/addProductPage
+
 /product/updateProductPage
+
 /product/delete/{id}
