@@ -20,6 +20,7 @@ Spring Boot itself is a Java based web framework.
 The project runs on local host port 8080. Deployment to Heroku is possible.
 
 Endpoints:
+
 /category/listCategory
 
 /category/addCategoryPage
