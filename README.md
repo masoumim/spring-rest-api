@@ -8,7 +8,9 @@ The Spring web service is coded in Java.
 The stack used is as follows:
 
 H2 (Database) - Model
+
 Thymeleaf / HTML - View
+
 Spring Boot (Java) - Controller
 
 H2 is the default, commonly used Spring Boot db solution. Thymeleaf is similarly a frequently utilized front-end for Spring Boot. 
