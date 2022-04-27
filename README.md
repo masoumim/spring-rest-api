@@ -3,8 +3,6 @@ A Spring based RESTful API for an inventory web service.
 This project is a RESTful API for a web service that allows for CRUD operations on an inventory system. 
 The two entities are Category and Product with a one-to-many relationship.
 
-The IDE used is Spring Tool Suite which is based on Eclipse.
-
 The Spring web service is coded in Java.
 
 The stack used is as follows:
